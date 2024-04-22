@@ -1,0 +1,117 @@
+body{
+    background:linear-gradient(to right,#fc492a,#2f6df3);
+}
+ 
+ /* .sedan .container */
+ /* section:nth-child(odd){
+     background:linear-gradient(#8EC5FC,#E0C3FC);
+    }
+    section:nth-child(even){
+        background:linear-gradient(#E0C3FC,#8EC5FC);   
+    } */
+    section{
+     background:linear-gradient(#8EC5FC,#E0C3FC);
+     width: 100%;
+ }
+ 
+ .container .cars{
+     display: flex;
+     gap: 18px;
+     align-items:flex-start;
+     height: 12em;
+     box-shadow: 0 0 30px rgba(0, 0, 0, 0.068);
+     padding: 14px;
+     border-radius: 18px;
+     margin-bottom: 2em;
+ }
+ .container .cars .car-img{
+     width: 20%;
+ }
+ .container .cars .car-img img{
+     width: 100%;
+     border-radius:14px;
+ }
+ 
+ .container .cars .book-btn{
+     height: 100%;
+     width: 20%;
+     display: flex;
+     gap: 15px;
+     flex-direction: column;
+     justify-content: space-evenly;
+ }
+ .heading{
+     font-size: 1.5rem;
+     font-weight: 600;
+     margin-bottom: 19px;
+ }
+ 
+ 
+ section{
+     
+ }
+ 
+ .container .cars .book-btn .btn{
+     text-align: center;
+ }
+ 
+ 
+ .container .cars .book-btn button {
+   background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+   border: 0;
+   border-radius: 14px;
+   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+   color: #FFFFFF;
+   font-family: Phantomsans, sans-serif;
+   font-size: 1.1em;
+   padding: 19px 24px;
+   cursor: pointer;
+  
+ }
+ 
+ .container .cars .book-btn button:hover {
+   box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+   transition: .1s ease;
+ }
+ 
+ .rating{
+     background: rgb(29, 124, 233);
+     padding: 3px;
+     border-radius: 10px;
+     font-size: .6rem;
+     margin-left: 5px;    
+ }
+ .pricing{
+     text-align: center;
+     font-size: 1.3em;
+     font-weight: 500;
+     color:rgb(77, 74, 69);
+     font-family: "Segoe UI";
+ }
+ .container .cars .details .car-name{
+     font-weight: 600;
+ }
+ .container .cars .details{
+     width: 60%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     
+     
+ }
+ 
+ /* copyright */
+ .copyright{
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .social a{
+     color: #444;
+     padding: 10px;
+     font-size: 21px;    
+  }
+ 

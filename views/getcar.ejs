@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styleGetCar.css">
+</head>
+<body>
+    <div class="mainhead">
+        <div class="dtails">
+            <a href="/home" class>🚗 Drivino ™</a>
+            <span>
+                <i class="ri-phone-fill"></i>
+                <p class="pinline">+91 1234567890</p>
+            </span>
+            <span>
+                <i class="ri-mail-fill"></i>
+                <a href="#">Drivino@dehradun.com</a>
+            </span>
+        </div>
+        <div class="location-info">
+        <span><i class="ri-map-pin-2-fill"></i></span>
+        Dehradun City
+    </div>
+    </div>
+        <header>
+            <h3>Drivino - Rent Your Ride</h3>
+            <!-- menu icon -->
+            <i class="ri-menu-line" id="menu-icon"></i>
+            <ul class="navbar">
+                <li><a href="/home" class="hover nav-link">Home</a></li>
+            <li><a href="/home#about-us"class="hover nav-link">About Us</a></li>
+            <li><a href="/getCar"class="hover nav-link">Get Car</a></li>
+            <li><a href="/contactUs"class="hover nav-link">Contact us</a></li>
+            <li>
+                <% if (loggedInUsername) { %>
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">
+                            <a href="#" class="afterlogin" id="afterlogin">  <span class="icon"><i class="ri-user-line"></i> &nbsp;&nbsp;</span><%= loggedInname %> &nbsp;&nbsp;<i class="ri-arrow-down-s-line"></i></a>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#"><%=loggedInUsername%></a>
+                                <a href="/logout" id="logoutbtn">Logout</a>
+                            </a>
+                        </div>
+                      </div>
+                <% } else { %>
+                    <a href="/home" id="login-btn" class="main-btn">Login</a>
+                <% } %>
+        </li>
+            </ul>
+        </header>
+        <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ SEDAN ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+        <section class="sedan " id="sedan">
+            <h3 class="heading">Sedans</h3>
+            <div class="container">
+                <% for (car of sedan) { %>
+                    <div class="cars">
+                        <div class="car-img">
+                            <img src="<%= car.img%>"alt="car img">
+                        </div>
+                        <div class="details">
+                            <div class="box">
+                                <span class="car-name"><%=car.name%></span>
+                                <span class="rating"><%=car.rating%>/5</span>
+                            </div>
+                            <div class="features">
+                                <p>Sedan | <%=car.seats%> Seats 💺 | AC ❄️ </p>
+                            </div>
+    
+                            <div class="price">
+                                <p>
+                                   ⛽ <%=car.fuel%> | 🟢 <%=car.transmission%> | 🔺 <%=car.mileage%>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="book-btn" id="swift-btn">
+                            <span class="pricing">
+                                ₹ <%=car.price%>/Day
+                            </span>
+                            <div class="btn">
+                                <button id="sedan<%=car.id%>" onclick="redirectToBooking('sedan', '<%=car.id%>')">Book Now</button>
+                        </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    </div>
+                    </section>
+              <!-- ######################  HATCHBACK  ############################## -->
+              <section class="hatchback " id="hatchback">
+                <h3 class="heading">Hatchbacks</h3>
+                <div class="container">
+                    <% for (car of hatchback) { %>
+                        <div class="cars">
+                            <div class="car-img">
+                                <img src="<%= car.img%>"alt="car img">
+                            </div>
+                            <div class="details">
+                                <div class="box">
+                                    <span class="car-name"><%=car.name%></span>
+                                    <span class="rating"><%=car.rating%>/5</span>
+                                </div>
+                                <div class="features">
+                                    <p>Sedan | <%=car.seats%> Seats 💺 | AC ❄️ </p>
+                                </div>
+        
+                                <div class="price">
+                                    <p>
+                                       ⛽ <%=car.fuel%> | 🟢 <%=car.transmission%> | 🔺 <%=car.mileage%>
+                                    </p>
+                                </div>
+        
+                            </div>
+                            <div class="book-btn" id="swift-btn">
+                                <span class="pricing">
+                                    ₹ <%=car.price%>/Day
+                                </span>
+                                <div class="btn">
+                                    <button id="hatchback<%=car.id%>" onclick="redirectToBooking('hatchback', '<%=car.id%>')">Book Now</button>
+                            </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        </div>
+                        </section>
+            <!-- ************************** SUV ************************ -->
+            <section class="suv " id="suv">
+                <h3 class="heading">SUV</h3>
+                <div class="container">
+                    <% for (car of suv) { %>
+                        <div class="cars">
+                            <div class="car-img">
+                                <img src="<%= car.img%>"alt="car img">
+                            </div>
+                            <div class="details">
+                                <div class="box">
+                                    <span class="car-name"><%=car.name%></span>
+                                    <span class="rating"><%=car.rating%>/5</span>
+                                </div>
+                                <div class="features">
+                                    <p>Sedan | <%=car.seats%> Seats 💺 | AC ❄️ </p>
+                                </div>
+        
+                                <div class="price">
+                                    <p>
+                                       ⛽ <%=car.fuel%> | 🟢 <%=car.transmission%> | 🔺 <%=car.mileage%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="book-btn" id="swift-btn">
+                                <span class="pricing">
+                                    ₹ <%=car.price%>/Day
+                                </span>
+                                <div class="btn">
+                                    <button id="suv<%=car.id%>" onclick="redirectToBooking('suv', '<%=car.id%>')">Book Now</button>
+                            </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        </div>
+                        </section>
+            <!-- ++++++++++++++++++++++ LUXURY ++++++++++++++++++++++++++++++++++ -->
+            <section class="luxury " id="luxury">
+                <h3 class="heading">Luxury</h3>
+                <div class="container">
+                    <% for (car of luxury) { %>
+                        <div class="cars">
+                            <div class="car-img">
+                                <img src="<%= car.img%>"alt="car img">
+                            </div>
+                            <div class="details">
+                                <div class="box">
+                                    <span class="car-name"><%=car.name%></span>
+                                    <span class="rating"><%=car.rating%>/5</span>
+                                </div>
+                                <div class="features">
+                                    <p>Sedan | <%=car.seats%> Seats 💺 | AC ❄️ </p>
+                                </div>
+        
+                                <div class="price">
+                                    <p>
+                                       ⛽ <%=car.fuel%> | 🟢 <%=car.transmission%> | 🔺 <%=car.mileage%>
+                                    </p>
+                                </div>
+        
+                            </div>
+                            <div class="book-btn" id="swift-btn">
+                                <span class="pricing">
+                                    ₹ <%=car.price%>/Day
+                                </span>
+                                <div class="btn">
+                                    <button id="luxury<%=car.id%>" onclick="redirectToBooking('luxury', '<%=car.id%>')">Book Now</button>
+                            </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        </div>
+                        </section>     
+            <!-- ***************************copyright****************************** -->
+
+    <div class="copyright">
+        <p>&#169; Drivino™ All Rights Reserved®</p>
+        <div class="social">
+            <a href="#"><i class="ri-facebook-line"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+        </div>
+    </div>
+           <script>
+              // Get the current URL
+  var currentUrl = window.location.href;
+
+// Get all navigation links
+var navLinks = document.querySelectorAll('.nav-link');
+
+// Loop through each link and check if its href matches the current URL
+navLinks.forEach(function(link) {
+  if (link.href === currentUrl) {
+    // Add 'current-page' class to the link if it matches the current URL
+    link.classList.add('current-page');
+  }
+});
+
+function redirectToBooking(type, carid) {
+    // Redirect to the booking page with the car ID and section ID as query parameters
+    window.location.href = `/getCar/booking/${type}/${carid}`;
+}
+           </script>
+</body>
+</html>

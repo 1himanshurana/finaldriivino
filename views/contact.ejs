@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styleContactUs.css">
+
+</head>
+<body>
+    
+
+
+
+
+    
+        <header>
+            <h3>Drivino - Rent Your Ride</h3>
+            <!-- menu icon -->
+            <i class="ri-menu-line" id="menu-icon"></i>
+            
+            <ul class="navbar">
+                <li><a href="/home" class="hover nav-link">Home</a></li>
+            <li><a href="/home#about-us"class="hover nav-link">About Us</a></li>
+            <li><a href="/getCar"class="hover nav-link">Get Car</a></li>
+            <li><a href="/contactUs"class="hover nav-link">Contact us</a></li>
+            <li>
+                <% if (loggedInUsername) { %>
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">
+                            <a href="#" class="afterlogin" id="afterlogin">  <span class="icon"><i class="ri-user-line"></i> &nbsp;&nbsp;</span><%= loggedInname %> &nbsp;&nbsp;<i class="ri-arrow-down-s-line"></i></a>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#"><%=loggedInUsername%></a>
+                                <a href="/logout" id="logoutbtn">Logout</a>
+                            </a>
+                        </div>
+                      </div>
+
+
+
+                <% } else { %>
+                    <a href="/home" id="login-btn" class="main-btn">Login</a>
+                <% } %>
+           
+        </li>
+            </ul>
+        </header>
+
+        <main>
+            <div class="main-container">
+                <div class="contact-box">
+
+                    <div class="contact-details">
+                        <h2>Let's get in touch</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing eltio. Illo cum impedit eligendi obcaecati a consectetur animi perspiciatis!</p>
+                        <div class="contact-handles">
+                            <div class="location">
+                                <i class="ri-map-pin-2-fill"></i>
+                                Dehradun
+
+                            </div>
+                            <div class="e-mail">
+                                <i class=" ri-mail-fill"></i>
+                                Drivino.dehradun.com
+                            </div>
+                            <div class="phone-number">
+                                <i class="ri-phone-fill"></i>
+                                +91 123456789
+                            </div>
+                        </div>
+                        <p id="connect-line">Connect with us :</p>
+                        <div class="social-handles">
+                            <div class="face">
+                                <a href="https://www.facebook.com/DITUniversity.edu/" target="_blank"><i class="ri-facebook-line"></i></a>
+                            </div>
+                            <div class="tweet">
+                                <a href="https://twitter.com/dit_university?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="ri-twitter-fill"></i></a>
+                            </div>
+                            <div class="ig">
+                                <a href="https://www.instagram.com/dituniversity/?hl=en" target="_blank"><i class="ri-instagram-line"></i></a>
+                            </div>
+                            <div class="linked-in">
+                                <a href="https://in.linkedin.com/school/dit-university/" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-form">
+                        <h2>Contact us</h2>
+                        <form action="https://api.web3forms.com/submit" method="post">
+                            <input type="hidden" name="access_key" value="41d4d2d0-53c4-4346-b712-d9457daca221">
+                            <div class="input-box">
+                                <span class="icon">
+                                    <i class="ri-user-fill"></i></span>
+                                <input type="text" required id="username" name="Name">
+                                <label for="username">Full Name</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"><i class="ri-mail-fill"></i></span>
+                                <input type="email" required id="email" name="Email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"><i class="ri-phone-fill"></i></span>
+                                <input type="number" required id="phone-no" name="Phone">
+                                <label for="phone-no">Phone</label>
+                            </div>
+                            <div class="feedback-text">
+                                <label for="feedback">
+                                    Message
+                                </label>
+                                <textarea name="feedback" id="feedback" rows="5"></textarea>
+                                
+                            </div>
+                            <button type="submit" class="feedback-btn">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        
+
+        <script >
+              // Get the current URL
+  var currentUrl = window.location.href;
+
+// Get all navigation links
+var navLinks = document.querySelectorAll('.nav-link');
+
+// Loop through each link and check if its href matches the current URL
+navLinks.forEach(function(link) {
+  if (link.href === currentUrl) {
+    // Add 'current-page' class to the link if it matches the current URL
+    link.classList.add('current-page');
+  }
+});
+        </script>
+</body>
+</html>
